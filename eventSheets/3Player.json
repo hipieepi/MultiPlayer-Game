@@ -1,0 +1,94 @@
+{
+	"name": "3Player",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "progres",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 526512298161243
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 786162563339477
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "barrFill",
+					"sid": 119569747941856,
+					"parameters": {
+						"width": "progres * 800"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TxtPercent",
+					"sid": 795783352087723,
+					"parameters": {
+						"text": "round(progres * 100) & \"%\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 123597285530721,
+					"parameters": {
+						"variable": "progres",
+						"value": "min(1, progres + dt / 3)"
+					}
+				}
+			],
+			"sid": 668867605818576
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 745642899985145,
+					"parameters": {
+						"variable": "progres",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 765874293208033
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 855898245572974,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 800761355365413,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 268987193782570
+		}
+	],
+	"sid": 507325783692825
+}

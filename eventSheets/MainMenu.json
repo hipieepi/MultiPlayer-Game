@@ -1,0 +1,156 @@
+{
+	"name": "MainMenu",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "jumlahPemain",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 979786352301434
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 697026187262223,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlayer1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 797793304197911,
+					"parameters": {
+						"variable": "jumlahPemain",
+						"value": "1"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 643414155355634,
+					"parameters": {
+						"layout": "1Player"
+					}
+				}
+			],
+			"sid": 459377727378826
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 404094045703492,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlayer2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 424148154912039,
+					"parameters": {
+						"variable": "jumlahPemain",
+						"value": "2"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 253104699526318,
+					"parameters": {
+						"layout": "2Player"
+					}
+				}
+			],
+			"sid": 796941513540426
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 494225795697481,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlayer3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 640163653562133,
+					"parameters": {
+						"variable": "jumlahPemain",
+						"value": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 731643394690824,
+					"parameters": {
+						"layout": "3Player"
+					}
+				}
+			],
+			"sid": 431578511401961
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 649514299659356,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BtnPlayer4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 550184505865639,
+					"parameters": {
+						"variable": "jumlahPemain",
+						"value": "4"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 350810648196509,
+					"parameters": {
+						"layout": "4Player"
+					}
+				}
+			],
+			"sid": 934080742157166
+		}
+	],
+	"sid": 401191778188213
+}
