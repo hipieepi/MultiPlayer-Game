@@ -1,0 +1,229 @@
+{
+	"name": "kartu",
+	"plugin-id": "Sprite",
+	"sid": 384399935155156,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "cek",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 612109895705802
+		},
+		{
+			"name": "sudahBenar",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 724746571097161
+		},
+		{
+			"name": "terpasang",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 171454645029363
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 280,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2517299,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 239584956873771,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 280,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3374978,
+						"collisionPoly": {
+							"points": [
+								0.09642857142857143,
+								0.01,
+								0.9892857142857143,
+								0.0675,
+								0.9071428571428571,
+								0.9925,
+								0.014285714285714285,
+								0.935
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 280,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 983944,
+						"collisionPoly": {
+							"points": [
+								0.09642857142857143,
+								0.01,
+								0.9892857142857143,
+								0.0675,
+								0.9071428571428571,
+								0.9925,
+								0.014285714285714285,
+								0.935
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 280,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6020403,
+						"collisionPoly": {
+							"points": [
+								0.09642857142857143,
+								0.01,
+								0.9892857142857143,
+								0.0675,
+								0.9071428571428571,
+								0.9925,
+								0.014285714285714285,
+								0.935
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 280,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7225692,
+						"collisionPoly": {
+							"points": [
+								0.09642857142857143,
+								0.01,
+								0.9892857142857143,
+								0.0675,
+								0.9071428571428571,
+								0.9925,
+								0.014285714285714285,
+								0.935
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 280,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6890375,
+						"collisionPoly": {
+							"points": [
+								0.09642857142857143,
+								0.01,
+								0.9892857142857143,
+								0.0675,
+								0.9071428571428571,
+								0.9925,
+								0.014285714285714285,
+								0.935
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 280,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8843275,
+						"collisionPoly": {
+							"points": [
+								0.09642857142857143,
+								0.01,
+								0.9892857142857143,
+								0.0675,
+								0.9071428571428571,
+								0.9925,
+								0.014285714285714285,
+								0.935
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 646019781702153,
+				"name": "Terbuka",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -2,6 +2,46 @@
 	"name": "1Player",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "kartuBelumTerpasang",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 762552343305380
+		},
+		{
+			"eventType": "variable",
+			"name": "kartuPertama",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 790143808320032
+		},
+		{
+			"eventType": "variable",
+			"name": "kartuKedua",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 120109595845009
+		},
+		{
+			"eventType": "variable",
+			"name": "totalBenar",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 705353803993674
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -46,6 +86,161 @@
 				}
 			],
 			"sid": 131564966581808
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 257726411354571
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "spawnKartu",
+					"sid": 879157695513489,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 824850299014609,
+					"parameters": {
+						"variable": "kartuBelumTerpasang",
+						"value": "kartu.Count"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 295964347036662,
+					"parameters": {
+						"variable": "totalBenar",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 793858981219542
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 300579950274920,
+					"parameters": {
+						"variable": "kartuBelumTerpasang",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "kartu",
+					"sid": 886923919611178,
+					"parameters": {
+						"animation": "\"Default\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 295467081367501,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 476895540571853,
+							"parameters": {
+								"object": "kartu"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "kartu",
+							"sid": 607578939849805,
+							"parameters": {
+								"instance-variable": "terpasang"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 104388688996020,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-random-instance",
+									"objectClass": "System",
+									"sid": 352580393500457,
+									"parameters": {
+										"object": "spawnKartu"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spawnKartu",
+									"sid": 239148952124901,
+									"parameters": {
+										"instance-variable": "use"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "kartu",
+									"sid": 854318388139438,
+									"parameters": {
+										"object": "spawnKartu",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "spawnKartu",
+									"sid": 778032638066962,
+									"parameters": {
+										"instance-variable": "use",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "kartu",
+									"sid": 909781381278700,
+									"parameters": {
+										"instance-variable": "terpasang",
+										"value": "true"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 578543949736865,
+									"parameters": {
+										"variable": "kartuBelumTerpasang",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 763362900240748
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 487728194227912

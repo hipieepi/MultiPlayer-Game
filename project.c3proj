@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 49502,
+	"savedWithRelease": 50603,
 	"name": "Game_MultiPlayer",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -81,7 +81,15 @@
 			"Sprite6",
 			"Sprite7",
 			"TiledBackground2",
-			"Sprite8"
+			"Sprite8",
+			"kartu1",
+			"kartu4",
+			"kartu3",
+			"kartu2",
+			"kartu5",
+			"kartu6",
+			"spawnKartu",
+			"kartu"
 		],
 		"subfolders": []
 	},
@@ -241,8 +249,8 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
+		"saveLLMContextFile": true,
 		"pixelRounding": false,
-		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-scale",
@@ -283,6 +291,7 @@
 		"loaderStyle": "splash",
 		"preloadSounds": true,
 		"uidAllocationMode": "increment",
+		"zAxisScale": "regular",
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"exportFileStructure": "folders",
