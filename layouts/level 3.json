@@ -1,5 +1,5 @@
 {
-	"name": "4Player",
+	"name": "level 3",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -31,8 +31,8 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 42,
-					"sid": 311891291284715,
+					"uid": 38,
+					"sid": 866153421399341,
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
@@ -65,8 +65,8 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 43,
-					"sid": 678446453664793,
+					"uid": 39,
+					"sid": 724880768911618,
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
@@ -99,8 +99,8 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 44,
-					"sid": 403313250722578,
+					"uid": 40,
+					"sid": 796849614653090,
 					"tags": "",
 					"instanceVariables": {
 						"UkuranX": 0,
@@ -142,8 +142,8 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 45,
-					"sid": 644058269235111,
+					"uid": 41,
+					"sid": 978185640597808,
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
@@ -168,7 +168,7 @@
 					}
 				}
 			],
-			"sid": 910455802526034,
+			"sid": 156436040536068,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -199,7 +199,7 @@
 			"global": false
 		}
 	],
-	"sid": 476690703963665,
+	"sid": 201759865702866,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1920,
@@ -210,5 +210,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "1Player"
+	"eventSheet": null
 }

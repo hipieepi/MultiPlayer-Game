@@ -40,7 +40,7 @@
 					"objectClass": "System",
 					"sid": 643414155355634,
 					"parameters": {
-						"layout": "1Player"
+						"layout": "level 1"
 					}
 				}
 			],
@@ -75,7 +75,7 @@
 					"objectClass": "System",
 					"sid": 253104699526318,
 					"parameters": {
-						"layout": "2Player"
+						"layout": "level 2"
 					}
 				}
 			],
@@ -110,7 +110,7 @@
 					"objectClass": "System",
 					"sid": 731643394690824,
 					"parameters": {
-						"layout": "3Player"
+						"layout": "level 3"
 					}
 				}
 			],
@@ -138,14 +138,6 @@
 					"parameters": {
 						"variable": "jumlahPemain",
 						"value": "4"
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 350810648196509,
-					"parameters": {
-						"layout": "4Player"
 					}
 				}
 			],

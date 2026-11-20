@@ -1,0 +1,1565 @@
+{
+	"name": "level 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "kartuBelumTerpasang",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 762552343305380
+		},
+		{
+			"eventType": "variable",
+			"name": "kartuPertama",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 790143808320032
+		},
+		{
+			"eventType": "variable",
+			"name": "kartuKedua",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 120109595845009
+		},
+		{
+			"eventType": "variable",
+			"name": "totalBenar",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 705353803993674
+		},
+		{
+			"eventType": "variable",
+			"name": "selesai",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 601975287702403
+		},
+		{
+			"eventType": "variable",
+			"name": "langkah",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 168721390441435
+		},
+		{
+			"eventType": "variable",
+			"name": "fasePermainan",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "0=menempatkan, 1=mengingat, 2=bermain, 3=selesai",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 724647617692337
+		},
+		{
+			"eventType": "variable",
+			"name": "skor",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 470204269828828
+		},
+		{
+			"bookmark": true,
+			"eventType": "variable",
+			"name": "sisaWaktu",
+			"type": "number",
+			"initialValue": "90",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 476976783626052
+		},
+		{
+			"eventType": "variable",
+			"name": "sisaIntip",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 107649989856949
+		},
+		{
+			"eventType": "variable",
+			"name": "lamaIntip",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "detik waktu mengingat kartu (30-60 sesuai ketentuan)",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 410874374661877
+		},
+		{
+			"eventType": "variable",
+			"name": "batasWaktu",
+			"type": "number",
+			"initialValue": "90",
+			"comment": "batas waktu Level 1 (detik)",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 657351729204733
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 378282599971762
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 903685875578961,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 283329962505415
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 680916042938748,
+					"parameters": {
+						"object": "LogoGame",
+						"type": "start"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 248786935419621,
+					"parameters": {
+						"layout": "MenuTicTacToe"
+					}
+				}
+			],
+			"sid": 131564966581808
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 257726411354571
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "spawnKartu",
+					"sid": 879157695513489,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 824850299014609,
+					"parameters": {
+						"variable": "kartuBelumTerpasang",
+						"value": "kartu.Count"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 295964347036662,
+					"parameters": {
+						"variable": "totalBenar",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "kartu",
+					"sid": 513658896032118,
+					"parameters": {
+						"animation": "\"Default\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 472274245844995,
+					"parameters": {
+						"variable": "kartuPertama",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 756310330697461,
+					"parameters": {
+						"variable": "kartuKedua",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 747966119195764,
+					"parameters": {
+						"variable": "selesai",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 408812068446926,
+					"parameters": {
+						"variable": "langkah",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 809716228388261,
+					"parameters": {
+						"variable": "fasePermainan",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 876470016815076,
+					"parameters": {
+						"variable": "skor",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 620516344474609,
+					"parameters": {
+						"variable": "sisaIntip",
+						"value": "lamaIntip"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 300711356179583,
+					"parameters": {
+						"variable": "sisaWaktu",
+						"value": "batasWaktu"
+					}
+				}
+			],
+			"sid": 793858981219542
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 300579950274920,
+					"parameters": {
+						"variable": "kartuBelumTerpasang",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 295467081367501,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 476895540571853,
+							"parameters": {
+								"object": "kartu"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "kartu",
+							"sid": 607578939849805,
+							"parameters": {
+								"instance-variable": "terpasang"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 104388688996020,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "spawnKartu",
+									"sid": 239148952124901,
+									"parameters": {
+										"instance-variable": "use"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-random-instance",
+									"objectClass": "System",
+									"sid": 352580393500457,
+									"parameters": {
+										"object": "spawnKartu"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "kartu",
+									"sid": 854318388139438,
+									"parameters": {
+										"object": "spawnKartu",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "spawnKartu",
+									"sid": 778032638066962,
+									"parameters": {
+										"instance-variable": "use",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "kartu",
+									"sid": 909781381278700,
+									"parameters": {
+										"instance-variable": "terpasang",
+										"value": "true"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 578543949736865,
+									"parameters": {
+										"variable": "kartuBelumTerpasang",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 763362900240748
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 277525993287983,
+					"parameters": {
+						"variable": "fasePermainan",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 495245731641756,
+					"parameters": {
+						"variable": "kartuBelumTerpasang",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 312909523016501,
+					"parameters": {
+						"variable": "fasePermainan",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 268674347590105,
+					"parameters": {
+						"variable": "sisaIntip",
+						"value": "lamaIntip"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "kartu",
+					"sid": 469318576469569,
+					"parameters": {
+						"instance-variable": "terbuka",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "kartu",
+					"sid": 164421720679366,
+					"parameters": {
+						"animation": "\"Terbuka\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "kartu",
+					"sid": 583491891582637,
+					"parameters": {
+						"frame-number": "kartu.cek - 1"
+					}
+				}
+			],
+			"sid": 506769645452288
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 921346811634276,
+					"parameters": {
+						"variable": "fasePermainan",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 187073576794571,
+					"parameters": {
+						"variable": "sisaIntip",
+						"value": "sisaIntip - dt"
+					}
+				}
+			],
+			"sid": 103741164249815,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 669446133478120,
+							"parameters": {
+								"variable": "sisaIntip",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 543021982964984,
+							"parameters": {
+								"variable": "fasePermainan",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 854503247996374,
+							"parameters": {
+								"variable": "sisaWaktu",
+								"value": "batasWaktu"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "kartu",
+							"sid": 626662793042742,
+							"parameters": {
+								"instance-variable": "terbuka",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "kartu",
+							"sid": 966560701423142,
+							"parameters": {
+								"instance-variable": "fase",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "kartu",
+							"sid": 243678624823203,
+							"parameters": {
+								"instance-variable": "prog",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 373016661631511
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 696283414781598,
+					"parameters": {
+						"variable": "fasePermainan",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 385120249446376,
+					"parameters": {
+						"variable": "selesai",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 283456043195497,
+					"parameters": {
+						"variable": "sisaWaktu",
+						"value": "sisaWaktu - dt"
+					}
+				}
+			],
+			"sid": 785362107961017,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 363668212227218,
+							"parameters": {
+								"variable": "sisaWaktu",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 847372987532985,
+							"parameters": {
+								"variable": "sisaWaktu",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 290770716427251,
+							"parameters": {
+								"variable": "selesai",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 688306924353571,
+							"parameters": {
+								"variable": "fasePermainan",
+								"value": "3"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "panelKalah",
+							"sid": 151824926571469,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "txtHasil",
+							"sid": 866282669762126,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "btnMainLagi",
+							"sid": 388746892856406,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "btnMenu",
+							"sid": 343461413400441,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txtHasil",
+							"sid": 588504938834290,
+							"parameters": {
+								"text": "\"Skor: \" & skor & newline & \"Langkah: \" & langkah"
+							}
+						}
+					],
+					"sid": 807199015052007
+				}
+			]
+		},
+		{
+			"bookmark": true,
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 663803219525913,
+					"parameters": {
+						"object": "kartu",
+						"type": "start"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "kartu",
+					"sid": 398888829170229,
+					"parameters": {
+						"instance-variable": "sudahBenar"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "kartu",
+					"sid": 715905428334585,
+					"parameters": {
+						"instance-variable": "terbuka"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 578145223647579,
+					"parameters": {
+						"variable": "kartuKedua",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "kartu",
+					"sid": 104554110412650,
+					"parameters": {
+						"instance-variable": "fase",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 681796992467414,
+					"parameters": {
+						"variable": "selesai",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 162979094647974,
+					"parameters": {
+						"variable": "fasePermainan",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "kartu",
+					"sid": 199408301772603,
+					"parameters": {
+						"instance-variable": "terbuka",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "kartu",
+					"sid": 856705962175995,
+					"parameters": {
+						"instance-variable": "fase",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "kartu",
+					"sid": 783635766559087,
+					"parameters": {
+						"instance-variable": "prog",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 415328524944375,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 683054747084776,
+							"parameters": {
+								"variable": "kartuPertama",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 214646577818212,
+							"parameters": {
+								"variable": "kartuPertama",
+								"value": "kartu.cek"
+							}
+						}
+					],
+					"sid": 581146898471534
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 316640595901349
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 882724014212653,
+							"parameters": {
+								"variable": "kartuKedua",
+								"value": "kartu.cek"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 554447889106436,
+							"parameters": {
+								"variable": "langkah",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 530108629102608,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 276131428139129,
+									"parameters": {
+										"variable": "kartuPertama",
+										"comparison": 0,
+										"value": "kartuKedua"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 160251085660067,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "\"Benar\"",
+									"sid": 854537360436624
+								}
+							],
+							"sid": 465709610354229
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 616219400330070
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 905371291643431,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "\"Salah\"",
+									"sid": 334672860788249
+								}
+							],
+							"sid": 620450637189500
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 705377084097175,
+					"parameters": {
+						"variable": "totalBenar",
+						"comparison": 5,
+						"value": "kartu.Count / 2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 145010193468947,
+					"parameters": {
+						"variable": "selesai",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 609999655112721,
+					"parameters": {
+						"variable": "selesai",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 432816805881122,
+					"parameters": {
+						"variable": "fasePermainan",
+						"value": "3"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 238357148247207,
+					"parameters": {
+						"variable": "skor",
+						"value": "20"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 990338688411963,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "panelMenang",
+					"sid": 414122888515725,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "txtHasil",
+					"sid": 460810484761216,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btnMainLagi",
+					"sid": 979542933365987,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btnMenu",
+					"sid": 929610309710315,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txtHasil",
+					"sid": 496200993871343,
+					"parameters": {
+						"text": "\"Skor: \" & skor & newline & \"Langkah: \" & langkah"
+					}
+				}
+			],
+			"sid": 777219231614401
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "txtSkor",
+					"sid": 375606820719923,
+					"parameters": {
+						"text": "\"SKOR: \" & skor"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txtPasangan",
+					"sid": 256802842629891,
+					"parameters": {
+						"text": "\"PASANGAN: \" & totalBenar & \"/\" & kartu.Count / 2"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txtWaktu",
+					"sid": 745678629601811,
+					"parameters": {
+						"text": "\"0\" & floor(ceil(sisaWaktu) / 60) & \":\" & (ceil(sisaWaktu) % 60 < 10 ? \"0\" : \"\") & (ceil(sisaWaktu) % 60)"
+					}
+				}
+			],
+			"sid": 984556206666804
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 275616538420429,
+					"parameters": {
+						"variable": "fasePermainan",
+						"comparison": 3,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "txtInfo",
+					"sid": 536165790258794,
+					"parameters": {
+						"text": "\"Ingat posisi kartu! \" & ceil(sisaIntip)"
+					}
+				}
+			],
+			"sid": 951339435467599
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 846314710507376,
+					"parameters": {
+						"variable": "fasePermainan",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "txtInfo",
+					"sid": 287308280126682,
+					"parameters": {
+						"text": "\"Cari pasangan yang sama!\""
+					}
+				}
+			],
+			"sid": 467934871519223
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 197059443430060,
+					"parameters": {
+						"variable": "fasePermainan",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "txtInfo",
+					"sid": 688179185598183,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 727428320498975
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "kartu",
+					"sid": 286984026622106,
+					"parameters": {
+						"instance-variable": "fase",
+						"comparison": 5,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "kartu",
+					"sid": 417105642197461,
+					"parameters": {
+						"instance-variable": "prog",
+						"value": "min(1, kartu.prog + dt / 0.25)"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "kartu",
+					"sid": 412697157958682,
+					"parameters": {
+						"width": "max(2, 280 * abs(1 - 2 * kartu.prog))"
+					}
+				}
+			],
+			"sid": 195068754818521
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "kartu",
+					"sid": 214284282579718,
+					"parameters": {
+						"instance-variable": "fase",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "kartu",
+					"sid": 525488353896472,
+					"parameters": {
+						"instance-variable": "prog",
+						"comparison": 5,
+						"value": "0.5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "kartu",
+					"sid": 584651956265274,
+					"parameters": {
+						"instance-variable": "fase",
+						"value": "2"
+					}
+				}
+			],
+			"sid": 343428928514101,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "kartu",
+							"sid": 631461256483485,
+							"parameters": {
+								"instance-variable": "terbuka"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "kartu",
+							"sid": 656753298399098,
+							"parameters": {
+								"animation": "\"Terbuka\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "kartu",
+							"sid": 217790440469496,
+							"parameters": {
+								"frame-number": "kartu.cek - 1"
+							}
+						}
+					],
+					"sid": 603145199277812
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "kartu",
+							"sid": 712459823358838,
+							"parameters": {
+								"instance-variable": "terbuka"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "kartu",
+							"sid": 574219650847825,
+							"parameters": {
+								"animation": "\"Default\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 510909177021418
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "kartu",
+					"sid": 530920634691327,
+					"parameters": {
+						"instance-variable": "fase",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "kartu",
+					"sid": 168065727612599,
+					"parameters": {
+						"instance-variable": "prog",
+						"comparison": 5,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "kartu",
+					"sid": 343385207223596,
+					"parameters": {
+						"width": "280"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "kartu",
+					"sid": 576789049550943,
+					"parameters": {
+						"instance-variable": "fase",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "kartu",
+					"sid": 937522954698519,
+					"parameters": {
+						"instance-variable": "prog",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 930191509343038
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 583130370297031,
+					"parameters": {
+						"object": "btnMainLagi",
+						"type": "start"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 849263903819363,
+					"parameters": {
+						"variable": "selesai",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 330801137303151,
+					"parameters": {
+						"layout": "level 1"
+					}
+				}
+			],
+			"sid": 891219959708768
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 581903132726665,
+					"parameters": {
+						"object": "btnMenu",
+						"type": "start"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 496225433522951,
+					"parameters": {
+						"variable": "selesai",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 282850691836466,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 575490806309685
+		},
+		{
+			"functionName": "\"Benar\"",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 390291194480586,
+					"parameters": {
+						"variable": "totalBenar",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 285521026645648,
+					"parameters": {
+						"variable": "skor",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 334683175885817,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 146329009762943,
+							"parameters": {
+								"object": "kartu"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "kartu",
+							"sid": 762832599441118,
+							"parameters": {
+								"instance-variable": "cek",
+								"comparison": 0,
+								"value": "kartuPertama"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "kartu",
+							"sid": 665531686847947,
+							"parameters": {
+								"instance-variable": "sudahBenar",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 367311365990221
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 372420911958745,
+							"parameters": {
+								"variable": "kartuKedua",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 166758236642170,
+							"parameters": {
+								"variable": "kartuPertama",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 200587310302438
+				}
+			]
+		},
+		{
+			"functionName": "\"Salah\"",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 350536765117997,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "kartu",
+							"sid": 663687841396696,
+							"parameters": {
+								"instance-variable": "terbuka"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "kartu",
+							"sid": 108503972246429,
+							"parameters": {
+								"instance-variable": "sudahBenar"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "kartu",
+							"sid": 817909706171583,
+							"parameters": {
+								"instance-variable": "terbuka",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "kartu",
+							"sid": 789196033791240,
+							"parameters": {
+								"instance-variable": "fase",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "kartu",
+							"sid": 624652686143042,
+							"parameters": {
+								"instance-variable": "prog",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 841424630701257
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 836011840481176,
+							"parameters": {
+								"variable": "kartuKedua",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 481015808287296,
+							"parameters": {
+								"variable": "kartuPertama",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 171331802142871
+				}
+			]
+		}
+	],
+	"sid": 487728194227912
+}

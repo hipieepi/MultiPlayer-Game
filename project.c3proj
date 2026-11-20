@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 50603,
+	"savedWithRelease": 50604,
 	"name": "Game_MultiPlayer",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -90,7 +90,20 @@
 			"kartu6",
 			"spawnKartu",
 			"kartu",
-			"desktop_game_background"
+			"desktop_game_background",
+			"panelMenang",
+			"btnMainLagi",
+			"btnMenu",
+			"txtHasil",
+			"panelKalah",
+			"badgeLevel",
+			"badgeSkor",
+			"badgeWaktu",
+			"badgePasangan",
+			"txtSkor",
+			"txtWaktu",
+			"txtPasangan",
+			"txtInfo"
 		],
 		"subfolders": []
 	},
@@ -106,11 +119,10 @@
 			"Layout 1",
 			"loading",
 			"MainMenu",
-			"1Player",
+			"level 1",
 			"MenuTicTacToe",
-			"2Player",
-			"3Player",
-			"4Player"
+			"level 2",
+			"level 3"
 		],
 		"subfolders": []
 	},
@@ -119,7 +131,7 @@
 			"2Player",
 			"3Player",
 			"MainMenu",
-			"1Player",
+			"level 1",
 			"MenuTicTacToe",
 			"4player"
 		],

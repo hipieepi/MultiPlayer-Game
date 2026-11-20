@@ -1,0 +1,10 @@
+{
+	"name": "txtInfo",
+	"plugin-id": "Text",
+	"sid": 769478480268266,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}
