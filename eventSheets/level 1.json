@@ -3,6 +3,16 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "levelAktif",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "1 = Level 1 (90s), 2 = Level 2 (150s)",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 989309330604126
+		},
+		{
+			"eventType": "variable",
 			"name": "kartuBelumTerpasang",
 			"type": "number",
 			"initialValue": "0",
@@ -147,31 +157,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 680916042938748,
-					"parameters": {
-						"object": "LogoGame",
-						"type": "start"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 248786935419621,
-					"parameters": {
-						"layout": "MenuTicTacToe"
-					}
-				}
-			],
-			"sid": 131564966581808
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 257726411354571
@@ -211,6 +196,14 @@
 					"parameters": {
 						"animation": "\"Default\"",
 						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "kartu",
+					"sid": 479925192389788,
+					"parameters": {
+						"frame-number": "levelAktif - 1"
 					}
 				},
 				{
@@ -279,6 +272,24 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
+					"sid": 691801440125509,
+					"parameters": {
+						"variable": "levelAktif",
+						"value": "LayoutName = \"level 2\" ? 2 : 1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 693317789196925,
+					"parameters": {
+						"variable": "batasWaktu",
+						"value": "levelAktif = 2 ? 150 : 90"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
 					"sid": 300711356179583,
 					"parameters": {
 						"variable": "sisaWaktu",
@@ -326,7 +337,16 @@
 							"isInverted": true
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "kartu",
+							"sid": 472706837252197,
+							"parameters": {
+								"frame-number": "levelAktif - 1"
+							}
+						}
+					],
 					"sid": 104388688996020,
 					"children": [
 						{
@@ -460,7 +480,7 @@
 					"objectClass": "kartu",
 					"sid": 583491891582637,
 					"parameters": {
-						"frame-number": "kartu.cek - 1"
+						"frame-number": "kartu.frameTampil"
 					}
 				}
 			],
@@ -1004,6 +1024,14 @@
 					"parameters": {
 						"text": "\"Skor: \" & skor & newline & \"Langkah: \" & langkah"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btnLanjut",
+					"sid": 679360691829875,
+					"parameters": {
+						"visibility": "visible"
+					}
 				}
 			],
 			"sid": 777219231614401
@@ -1085,7 +1113,7 @@
 					"objectClass": "txtInfo",
 					"sid": 287308280126682,
 					"parameters": {
-						"text": "\"Cari pasangan yang sama!\""
+						"text": "levelAktif = 2 ? \"Cocokkan perangkat dengan fungsinya!\" : \"Cari pasangan yang sama!\""
 					}
 				}
 			],
@@ -1216,7 +1244,7 @@
 							"objectClass": "kartu",
 							"sid": 217790440469496,
 							"parameters": {
-								"frame-number": "kartu.cek - 1"
+								"frame-number": "kartu.frameTampil"
 							}
 						}
 					],
@@ -1243,6 +1271,14 @@
 							"parameters": {
 								"animation": "\"Default\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "kartu",
+							"sid": 269227705268562,
+							"parameters": {
+								"frame-number": "levelAktif - 1"
 							}
 						}
 					],
@@ -1327,17 +1363,57 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 891219959708768,
+			"children": [
 				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 330801137303151,
-					"parameters": {
-						"layout": "level 1"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 911000000000001,
+							"parameters": {
+								"variable": "levelAktif",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 911000000000002,
+							"parameters": {
+								"layout": "level 1"
+							}
+						}
+					],
+					"sid": 911000000000003
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 911000000000004
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 911000000000005,
+							"parameters": {
+								"layout": "level 2"
+							}
+						}
+					],
+					"sid": 911000000000006
 				}
-			],
-			"sid": 891219959708768
+			]
 		},
 		{
 			"eventType": "block",
@@ -1557,6 +1633,81 @@
 						}
 					],
 					"sid": 171331802142871
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 858453005089971,
+					"parameters": {
+						"object": "btnLanjut",
+						"type": "start"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 276632635300310,
+					"parameters": {
+						"variable": "selesai",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 516600958682575,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 911000000000011,
+							"parameters": {
+								"variable": "levelAktif",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 911000000000012,
+							"parameters": {
+								"layout": "level 2"
+							}
+						}
+					],
+					"sid": 911000000000013
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 911000000000014
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 911000000000015,
+							"parameters": {
+								"layout": "level 3"
+							}
+						}
+					],
+					"sid": 911000000000016
 				}
 			]
 		}
